@@ -1,0 +1,23 @@
+---
+ - name: "playnook with register keyword"
+
+   hosts: earthlings
+
+   tasks:
+           - name: "issue a trivial command"
+             command: ls /lib/
+             register: contents_lib
+
+           - name: "debug display data return"
+             debug:
+                     msg: "{{ contents_lib }}"
+
+           - name: "debug standard error"
+             debug:
+                     msg: "{{ contents_lib.stderr }}"
+
+           - name: "debug standard out"
+             debug:
+                     msg: "{{ contents_lib.stdout }}"
+
+
