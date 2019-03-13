@@ -1,0 +1,12 @@
+---
+ - name: "perfect-express2"
+
+   hosts: planet-express
+
+   tasks:
+           - name: "figlet-uninstall"
+             apt:
+                     name: figlet
+                     state: absent
+             become: True
+
