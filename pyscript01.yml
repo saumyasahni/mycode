@@ -1,0 +1,16 @@
+---
+ - name: "Push a script and run it"
+   hosts: localhost  ##localhost by default is current PC
+
+   tasks:
+           - script : /home/student/mycode2/mycode/pyhello.py
+             args:
+                     executable: python3
+             register: results
+
+           - debug: 
+                   msg: "Here is what came back: {{ results }}"
+
+           - debug:
+                   msg: " Here is the output: {{ results.stdout }}"
+
